@@ -1,2 +1,2 @@
 # pcm-worlds2015-numbers
-Grabs and displays the registered confirmation numbers.
+Grabs and displays the registered confirmation numbers which were entered on http://uwpcm.com/worlds (https://github.com/Taurvi/pcm-worlds-2015).
