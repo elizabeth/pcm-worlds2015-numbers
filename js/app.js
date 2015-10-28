@@ -7,16 +7,19 @@ angular.module('Tickets', [])
         queryTickets.ascending("ticketNumber");
         queryTickets.limit(500);
         $scope.tickets = [];
+        $scope.total = 0;
 
         queryTickets.find({
             success: function(data) {
                 for (var i = 0; i < data.length; i++) {
                     var object = data[i];
-                    var each = {"id": object.id,
+                    var each = {"count": i+1, "id": object.id,
                         "number": object.get('ticketNumber'),
                         "checked": object.get('checkedIn')};
                     $scope.tickets.push(each);
+                    $scope.total += 1;
                 }
+
             },
             error: function(error) {
                 alert("Error: " + error.code + " " + error.message);

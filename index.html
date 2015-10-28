@@ -2,6 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"/>
+
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="https://www.parsecdn.com/js/parse-1.6.7.min.js"></script>
     <!-- angular script file -->
@@ -13,16 +15,17 @@
 <body class="container" ng-app="Tickets" ng-controller="ticketsController">
     <div id="search">
         <h2>PCM Worlds 2015 Confirmation Numbers</h2>
-        <p>
-            <input type="search" class="form-control" placeholder="type to filter" ng-model="query"/>
-        </p>
+        <div class="row">
+            <div class="col-md-6">
+                <input type="search" class="form-control" placeholder="type to filter" ng-model="query"/><br>
+            </div>
+        </div>
     </div>
 
     <div>
-        {{tickets[1].checked}}
-        <table>
+        <table class="table table-striped">
             <thead>
-                <th>ID</th>
+                <th>#</th>
                 <th>Confirmation Numbers</th>
                 <th>Checked In?</th>
                 <th>Number of Tickets</th>
@@ -30,13 +33,16 @@
 
             <tbody>
                 <tr ng-repeat="tix in tickets | filter : {number: query}">
-                    <td>ticket</td>
+                    <td>{{tix.count}}</td>
                     <td>{{tix.number}}</td>
-                    <td>{{ticket.checked}}</td>
+                    <td>{{tix.checked}}</td>
                     <td>0</td>
                 </tr>
             </tbody>
         </table>
+
+        <p>Total number of confirmation numbers: {{total}}</p>
+        <p>Total number of tickets (people): {{people}}</p>
 
     </div>
 </body>
