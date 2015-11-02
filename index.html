@@ -27,22 +27,17 @@
             <thead>
                 <th>#</th>
                 <th>Confirmation Numbers</th>
-                <th>Checked In?</th>
-                <th>Number of Tickets</th>
             </thead>
 
             <tbody>
                 <tr ng-repeat="tix in tickets | filter : {number: query}">
                     <td>{{tix.count}}</td>
                     <td>{{tix.number}}</td>
-                    <td>{{tix.checked}}</td>
-                    <td>0</td>
                 </tr>
             </tbody>
         </table>
 
         <p>Total number of confirmation numbers: {{total}}</p>
-        <p>Total number of tickets (people): {{people}}</p>
 
     </div>
 </body>

@@ -8,6 +8,7 @@ angular.module('Tickets', [])
         queryTickets.limit(500);
         $scope.tickets = [];
         $scope.total = 0;
+        $scope.people = 0;
 
         queryTickets.find({
             success: function(data) {
